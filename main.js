@@ -108,6 +108,12 @@ for (let i=0; i<formData.length; i++) {
       newOption.setAttribute('value', formData[i].options[j].value);
       newOption.innerHTML = formData[i].options[j].label;
     }
+    let defaultOption = document.createElement("option");
+    newSelect.appendChild(defaultOption);
+    defaultOption.setAttribute('id', 'defaultLanguage');
+    defaultOption.setAttribute('label', "Select language...");
+    defaultOption.setAttribute('selected', 'selected');
+
   } else if (formData[i].type === 'textarea') {
       let newTextArea = document.createElement('textarea');
       fields.appendChild(newTextArea);
